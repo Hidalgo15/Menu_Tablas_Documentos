@@ -1,4 +1,5 @@
-﻿@model Documento
+﻿@using System.Globalization
+@model Documento
 @{
     ViewData["Title"] = "Menú de Documentos";
 
@@ -17,6 +18,22 @@
     string nombreTablaActual = ViewContext.RouteData.Values["nombreTabla"]?.ToString()
         ?? Context.Request.Query["nombreTabla"].ToString()
         ?? "";
+
+    // Función local para formatear el nombre de la categoría
+    string FormatearNombreCategoria(string? textoOriginal)
+    {
+        if (string.IsNullOrWhiteSpace(textoOriginal)) return "Sin Categoría";
+
+        // Reemplazar guiones y caracteres no alfanuméricos por espacios
+        string limpio = System.Text.RegularExpressions.Regex.Replace(textoOriginal, @"[^a-zA-Z0-9]", " ");
+
+        // Quitar espacios extra en los extremos o intermedios
+        limpio = System.Text.RegularExpressions.Regex.Replace(limpio, @"\s+", " ").Trim();
+
+        // Convertir a Title Case (Primera letra de cada palabra en mayúscula)
+        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+        return textInfo.ToTitleCase(limpio.ToLower());
+    }
 }
 
 <div class="container-fluid py-2">
@@ -39,27 +56,29 @@
                                 var grupo = categorias[i];
                                 string categoryId = $"cat_{i}";
                                 string headingId = $"heading_{i}";
+                                string nombreFormateado = FormatearNombreCategoria(grupo.Key);
 
-                                <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                                <div class="accordion-item border rounded-3 mb-2 overflow-visible">
                                     <h2 class="accordion-header" id="@headingId">
-                                        <button class="accordion-button fw-bold text-primary @(i != 0 ? "collapsed" : "")"
+                                        <!-- Sin clase "collapsed" y aria-expanded="true" para estar abierto por defecto -->
+                                        <button class="accordion-button fw-bold text-primary"
                                                 type="button"
                                                 data-bs-toggle="collapse"
                                                 data-bs-target="#@categoryId"
-                                                aria-expanded="@(i == 0 ? "true" : "false")"
+                                                aria-expanded="true"
                                                 aria-controls="@categoryId">
-                                            @grupo.Key
+                                            @nombreFormateado
                                         </button>
                                     </h2>
 
+                                    <!-- Clase "show" permanente en la renderización inicial -->
                                     <div id="@categoryId"
-                                         class="accordion-collapse collapse @(i == 0 ? "show" : "")"
+                                         class="accordion-collapse collapse show"
                                          aria-labelledby="@headingId">
                                         <div class="accordion-body p-0">
                                             <div class="list-group list-group-flush">
                                                 @foreach (var doc in grupo)
                                                 {
-                                                    // ⚠️ AQUÍ SE PASA AHORA nombreTabla EN Url.Action
                                                     string downloadUrl = Url.Action(
                                                         "DescargarDocumento",
                                                         "Documento",
