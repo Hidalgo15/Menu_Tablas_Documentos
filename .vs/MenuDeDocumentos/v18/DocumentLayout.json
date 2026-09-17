@@ -1,122 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menu_tablas_documentos\\menudedocumentos\\views\\documento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\views\\documento\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menu_tablas_documentos\\menudedocumentos\\controllers\\documentos\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\controllers\\documentos\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menu_tablas_documentos\\menudedocumentos\\service\\interface\\idocumentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\service\\interface\\idocumentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menu_tablas_documentos\\menudedocumentos\\utils\\ejecucionsputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\utils\\ejecucionsputils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menu_tablas_documentos\\menudedocumentos\\models\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\models\\documento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|c:\\users\\pdesarrollo\\documents\\proyectos pasante\\menu_tablas_documentos\\menudedocumentos\\service\\documentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E31F0611-D7ED-4510-B282-73F88DBD693A}|MenuDeDocumentos\\MenuDeDocumentos.csproj|solutionrelative:menudedocumentos\\service\\documentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 161,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
-              "RelativeToolTip": "MenuDeDocumentos\\Views\\Documento\\Index.cshtml",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAG8AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-17T14:59:43.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Documento.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Models\\Documento.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Models\\Documento.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Models\\Documento.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Models\\Documento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T14:39:26.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DocumentoController.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Controllers\\Documentos\\DocumentoController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowDMAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T14:27:26.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DocumentoService.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Service\\DocumentoService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T14:26:36.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IDocumentoService.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Service\\Interface\\IDocumentoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T14:26:19.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EjecucionSpUtils.cs",
-              "DocumentMoniker": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Utils\\EjecucionSpUtils.cs",
-              "RelativeDocumentMoniker": "MenuDeDocumentos\\Utils\\EjecucionSpUtils.cs",
-              "ToolTip": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\Utils\\EjecucionSpUtils.cs",
-              "RelativeToolTip": "MenuDeDocumentos\\Utils\\EjecucionSpUtils.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-17T14:26:03.992Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
