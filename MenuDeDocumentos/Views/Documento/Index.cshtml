@@ -6,11 +6,17 @@
     string pdfInicial = ViewBag.PdfUrl as string ?? "";
     string tituloInicial = ViewBag.NombreDocumentoActual as string ?? "Seleccione un documento";
 
-    // Agrupación dinámica por Categoría (molde)
+    // Agrupación dinámica por Categoría
     var categorias = documentos.GroupBy(d => d.Categoria).ToList();
+
+    // Obtener los valores de la ruta actual
     int codigoPadreActual = ViewContext.RouteData.Values["codigo"] != null
         ? Convert.ToInt32(ViewContext.RouteData.Values["codigo"])
         : (int.TryParse(Context.Request.Query["codigo"], out int c) ? c : 0);
+
+    string nombreTablaActual = ViewContext.RouteData.Values["nombreTabla"]?.ToString()
+        ?? Context.Request.Query["nombreTabla"].ToString()
+        ?? "";
 }
 
 <div class="container-fluid py-2">
@@ -45,7 +51,7 @@
                                             @grupo.Key
                                         </button>
                                     </h2>
-                                    <!-- Se elimina data-bs-parent para permitir múltiples tarjetas abiertas -->
+
                                     <div id="@categoryId"
                                          class="accordion-collapse collapse @(i == 0 ? "show" : "")"
                                          aria-labelledby="@headingId">
@@ -53,10 +59,16 @@
                                             <div class="list-group list-group-flush">
                                                 @foreach (var doc in grupo)
                                                 {
+                                                    // ⚠️ AQUÍ SE PASA AHORA nombreTabla EN Url.Action
                                                     string downloadUrl = Url.Action(
                                                         "DescargarDocumento",
                                                         "Documento",
-                                                        new { codigoPadre = Context.GetRouteData().Values["codigo"] ?? codigoPadreActual, indiceHijo = doc.Codigo }
+                                                        new
+                                                        {
+                                                            nombreTabla = nombreTablaActual,
+                                                            codigoPadre = codigoPadreActual,
+                                                            indiceHijo = doc.Codigo
+                                                        }
                                                     )!;
 
                                                     <button type="button"
@@ -79,8 +91,8 @@
                             <p class="mb-2">
                                 <i class="bi bi-inbox" style="font-size: 2rem;"></i>
                             </p>
-                            <p class="small">Ingresa un código en la URL para cargar documentos</p>
-                            <p class="small"><code>https://sistema.url/codigo</code></p>
+                            <p class="small">Ingresa una tabla y un código en la URL para cargar documentos</p>
+                            <p class="small"><code>https://sistema.url/Documento/cbs01/123</code></p>
                         </div>
                     }
 

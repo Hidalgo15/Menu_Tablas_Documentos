@@ -9,7 +9,7 @@ namespace MenuDeDocumentos.Controllers.Documentos
     public class DocumentoController : Controller
     {
         private readonly IDocumentoService _documentoService;
-        private const string NombreTabla = "cbs01";
+        //private const string NombreTabla = "cbs01";
 
         public DocumentoController(IDocumentoService documentoService)
         {
@@ -18,19 +18,25 @@ namespace MenuDeDocumentos.Controllers.Documentos
 
         [HttpGet("")]
         [HttpGet("Index")]
-        [HttpGet("{codigo:int}")]
-        public async Task<IActionResult> Index(int? codigo)
+        [HttpGet("/{nombreTabla:regex(^[[a-zA-Z0-9_]]+$)}/{codigo:int}")]
+        public async Task<IActionResult> Index(string? nombreTabla, int? codigo)
         {
             if (codigo.HasValue && codigo.Value > 0)
             {
-                var listaDocumentos = await _documentoService.ObtenerListaDocumentosAsync(codigo.Value);
+                var listaDocumentos = await _documentoService.ObtenerListaDocumentosAsync(codigo.Value, nombreTabla ?? "");
                 ViewBag.Documentos = listaDocumentos;
 
                 if (listaDocumentos.Any())
                 {
                     var docSeleccionado = listaDocumentos.First();
 
-                    ViewBag.PdfUrl = Url.Action("DescargarDocumento", "Documento", new { codigoPadre = codigo.Value, indiceHijo = docSeleccionado.Codigo });
+                    
+                    ViewBag.PdfUrl = Url.Action("DescargarDocumento", "Documento", new
+                    {
+                        nombreTabla = nombreTabla ?? "",
+                        codigoPadre = codigo.Value,
+                        indiceHijo = docSeleccionado.Codigo
+                    });
                     ViewBag.NombreDocumentoActual = docSeleccionado.Nombre;
                 }
             }
@@ -43,15 +49,15 @@ namespace MenuDeDocumentos.Controllers.Documentos
         }
 
         // Recibe ambos parámetros de manera limpia y sin depender de sesiones
-        [HttpGet("DescargarDocumento/{codigoPadre:int}/{indiceHijo:int}")]
-        public async Task<IActionResult> DescargarDocumento(int codigoPadre, int indiceHijo)
+        [HttpGet("DescargarDocumento/{nombreTabla:regex(^[[a-zA-Z0-9_]]+$)}/{codigoPadre:int}/{indiceHijo:int}")]
+        public async Task<IActionResult> DescargarDocumento(string? nombreTabla, int codigoPadre, int indiceHijo)
         {
             if (codigoPadre <= 0 || indiceHijo < 0)
             {
                 return BadRequest("Parámetros de documento inválidos.");
             }
 
-            byte[]? archivoBytes = await _documentoService.ObtenerDocumentoDesdeBDAsync(codigoPadre, indiceHijo, NombreTabla);
+            byte[]? archivoBytes = await _documentoService.ObtenerDocumentoDesdeBDAsync(codigoPadre, indiceHijo, nombreTabla ?? "");
 
             if (archivoBytes == null || archivoBytes.Length == 0)
             {
