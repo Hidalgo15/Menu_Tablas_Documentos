@@ -17,12 +17,12 @@ public class DocumentoService : IDocumentoService
             ?? throw new InvalidOperationException("La cadena de conexión 'ConexionSIGOB' no existe.");
     }
 
-    public async Task<List<Documento>> ObtenerListaDocumentosAsync(int codigoPadre)
+    public async Task<List<Documento>> ObtenerListaDocumentosAsync(int codigoPadre, string nombreTabla)
     {
         var lista = new List<Documento>();
         int indice = 0;
 
-        await EjecucionSpUtils.ExecuteStoredProcedureAsync(_connectionString, codigoPadre, async reader =>
+        await EjecucionSpUtils.ExecuteStoredProcedureAsync(_connectionString, nombreTabla, codigoPadre, async reader =>
         {
             while (await reader.ReadAsync())
             {
@@ -47,7 +47,7 @@ public class DocumentoService : IDocumentoService
         byte[]? resultado = null;
         int contador = 0;
 
-        await EjecucionSpUtils.ExecuteStoredProcedureAsync(_connectionString, codigoPadre, async reader =>
+        await EjecucionSpUtils.ExecuteStoredProcedureAsync(_connectionString, nombreTabla, codigoPadre, async reader =>
         {
             while (await reader.ReadAsync())
             {

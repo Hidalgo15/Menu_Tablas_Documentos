@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj": {}
+    "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj": {
+    "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj",
+        "projectUniqueName": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj",
         "projectName": "MenuDeDocumentos",
-        "projectPath": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj",
+        "projectPath": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\MenuDeDocumentos.csproj",
         "packagesPath": "C:\\Users\\pdesarrollo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\MenuDeDocumentos\\MenuDeDocumentos\\obj\\",
+        "outputPath": "C:\\Users\\pdesarrollo\\Documents\\Proyectos Pasante\\Menu_Tablas_Documentos\\MenuDeDocumentos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
