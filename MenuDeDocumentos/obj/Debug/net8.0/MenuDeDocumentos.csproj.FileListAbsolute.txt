@@ -1,0 +1,153 @@
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\appsettings.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.staticwebassets.runtime.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.staticwebassets.endpoints.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.exe
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.deps.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.runtimeconfig.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.pdb
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.csproj.AssemblyReference.cache
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.AssemblyInfoInputs.cache
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.AssemblyInfo.cs
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.csproj.CoreCompileInputs.cache
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.RazorAssemblyInfo.cache
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.RazorAssemblyInfo.cs
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.sourcelink.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\scopedcss\bundle\MenuDeDocumentos.styles.css
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\scopedcss\projectbundle\MenuDeDocumentos.bundle.scp.css
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDo.054C1B33.Up2Date
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\refint\MenuDeDocumentos.dll
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.pdb
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.genruntimeconfig.cache
+C:\Users\Emmanuel Perez\Documents\Trabajo Pasantia\Menu de documentos\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\ref\MenuDeDocumentos.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\appsettings.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.staticwebassets.runtime.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.staticwebassets.endpoints.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.exe
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.deps.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.runtimeconfig.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\MenuDeDocumentos.pdb
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.csproj.AssemblyReference.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.AssemblyInfoInputs.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.AssemblyInfo.cs
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.csproj.CoreCompileInputs.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.RazorAssemblyInfo.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.RazorAssemblyInfo.cs
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.sourcelink.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\scopedcss\bundle\MenuDeDocumentos.styles.css
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\scopedcss\projectbundle\MenuDeDocumentos.bundle.scp.css
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDo.054C1B33.Up2Date
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\refint\MenuDeDocumentos.dll
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.pdb
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.genruntimeconfig.cache
+C:\Users\pdesarrollo\Documents\Proyectos Pasante\MenuDeDocumentos\MenuDeDocumentos\obj\Debug\net8.0\ref\MenuDeDocumentos.dll

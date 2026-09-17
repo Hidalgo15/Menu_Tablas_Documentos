@@ -1,0 +1,77 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+:root {
+    --cgr-azul-header: #0d5493;
+    --cgr-bg-body: #f4f6f9;
+}
+
+body {
+    background-color: var(--cgr-bg-body) !important;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Banner Superior */
+.cgr-top-banner {
+    background-color: var(--cgr-azul-header);
+    color: #ffffff;
+    border-bottom: 3px solid #0a4376;
+}
+
+/* Tarjetas y Contenedores */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Visor de PDF */
+.cgr-pdf-container {
+    border: 1px solid #e0e6ed;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+/* Badges o Etiquetas */
+.badge-cgr {
+    background-color: var(--cgr-azul-header);
+    color: #ffffff;
+}
+
+/* Ajustes para Menú Categorías Estrecho */
+.accordion-button {
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    word-break: break-word;
+}
+
+.list-group-item {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.doc-item i {
+    min-width: 18px;
+}
