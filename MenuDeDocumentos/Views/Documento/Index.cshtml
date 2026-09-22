@@ -1,4 +1,5 @@
-﻿@model Documento
+﻿@using System.Globalization
+@model Documento
 @{
     ViewData["Title"] = "Menú de Documentos";
 
@@ -6,11 +7,46 @@
     string pdfInicial = ViewBag.PdfUrl as string ?? "";
     string tituloInicial = ViewBag.NombreDocumentoActual as string ?? "Seleccione un documento";
 
-    // Agrupación dinámica por Categoría (molde)
+    // Agrupación dinámica por Categoría
     var categorias = documentos.GroupBy(d => d.Categoria).ToList();
+
+    // Obtener los valores de la ruta actual
     int codigoPadreActual = ViewContext.RouteData.Values["codigo"] != null
         ? Convert.ToInt32(ViewContext.RouteData.Values["codigo"])
         : (int.TryParse(Context.Request.Query["codigo"], out int c) ? c : 0);
+
+    string nombreTablaActual = ViewContext.RouteData.Values["nombreTabla"]?.ToString()
+        ?? Context.Request.Query["nombreTabla"].ToString()
+        ?? "";
+
+    // DICCIONARIO DE MAPEO PERSONALIZADO (Nombre en BD >> Nombre en Pantalla)
+    var mapaCategorias = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+    {
+        { "Documento_actividad", "Documentos de Actividades" },
+        { "Documento_base", "Documentación Base" },
+        { "Documento_propuesta", "Documentos de Propuestas" },
+        { "Documentos_mia", "Documentos del MIA" }
+        // Agrega aquí los nombres adicionales que quieras personalizar
+    };
+
+    // FUNCIÓN DE FORMATO CON RESPALDO (FALLBACK)
+    string ObtenerNombreCategoria(string? textoOriginal)
+    {
+        if (string.IsNullOrWhiteSpace(textoOriginal)) return "Sin Categoría";
+
+        // Si existe en el diccionario, retorna el texto amigable personalizado
+        if (mapaCategorias.TryGetValue(textoOriginal, out string? nombrePersonalizado))
+        {
+            return nombrePersonalizado;
+        }
+
+        // Si NO está en el diccionario, aplica la limpieza de guiones y Title Case
+        string limpio = System.Text.RegularExpressions.Regex.Replace(textoOriginal, @"[^a-zA-Z0-9]", " ");
+        limpio = System.Text.RegularExpressions.Regex.Replace(limpio, @"\s+", " ").Trim();
+
+        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+        return textInfo.ToTitleCase(limpio.ToLower());
+    }
 }
 
 <div class="container-fluid py-2">
@@ -33,21 +69,24 @@
                                 var grupo = categorias[i];
                                 string categoryId = $"cat_{i}";
                                 string headingId = $"heading_{i}";
+                                string nombreFormateado = ObtenerNombreCategoria(grupo.Key);
 
-                                <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                                <div class="accordion-item border rounded-3 mb-2 overflow-visible">
                                     <h2 class="accordion-header" id="@headingId">
-                                        <button class="accordion-button fw-bold text-primary @(i != 0 ? "collapsed" : "")"
+                                        <!-- Abierto por defecto sin clase 'collapsed' -->
+                                        <button class="accordion-button fw-bold text-primary"
                                                 type="button"
                                                 data-bs-toggle="collapse"
                                                 data-bs-target="#@categoryId"
-                                                aria-expanded="@(i == 0 ? "true" : "false")"
+                                                aria-expanded="true"
                                                 aria-controls="@categoryId">
-                                            @grupo.Key
+                                            @nombreFormateado
                                         </button>
                                     </h2>
-                                    <!-- Se elimina data-bs-parent para permitir múltiples tarjetas abiertas -->
+
+                                    <!-- 'collapse show' para desplegar desde el renderizado inicial -->
                                     <div id="@categoryId"
-                                         class="accordion-collapse collapse @(i == 0 ? "show" : "")"
+                                         class="accordion-collapse collapse show"
                                          aria-labelledby="@headingId">
                                         <div class="accordion-body p-0">
                                             <div class="list-group list-group-flush">
@@ -56,7 +95,12 @@
                                                     string downloadUrl = Url.Action(
                                                         "DescargarDocumento",
                                                         "Documento",
-                                                        new { codigoPadre = Context.GetRouteData().Values["codigo"] ?? codigoPadreActual, indiceHijo = doc.Codigo }
+                                                        new
+                                                        {
+                                                            nombreTabla = nombreTablaActual,
+                                                            codigoPadre = codigoPadreActual,
+                                                            indiceHijo = doc.Codigo
+                                                        }
                                                     )!;
 
                                                     <button type="button"
@@ -79,8 +123,8 @@
                             <p class="mb-2">
                                 <i class="bi bi-inbox" style="font-size: 2rem;"></i>
                             </p>
-                            <p class="small">Ingresa un código en la URL para cargar documentos</p>
-                            <p class="small"><code>https://sistema.url/codigo</code></p>
+                            <p class="small">Ingresa una tabla y un código en la URL para cargar documentos</p>
+                            <p class="small"><code>https://sistema.url/Documento/NombreTabla/123</code></p>
                         </div>
                     }
 
@@ -89,14 +133,14 @@
         </div>
 
         <!-- PANEL DERECHO: Visor PDF -->
-        <div class="col-lg-9">
+        <div class="col-lg-8">
             <div class="card border-0 shadow-sm rounded-3 p-3 bg-white">
                 <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
                     <h5 id="tituloDocumento" class="fw-bold mb-0 text-dark">@tituloInicial</h5>
                     <span class="badge" style="background-color: #0d5493;">Vista Previa</span>
                 </div>
 
-                <div class="cgr-pdf-container overflow-hidden rounded-3" style="height: 75vh;">
+                <div class="cgr-pdf-container overflow-hidden rounded-3" style="height: 140vh; width: 120vh;">
                     <iframe id="pdfFrame" src="@pdfInicial" width="100%" height="100%" style="border: none;">
                         Su navegador no soporta la visualización de documentos PDF.
                     </iframe>
@@ -117,6 +161,14 @@
                 item.classList.remove('active');
             });
             elemento.classList.add('active');
+
+            // Hace scroll hasta el contenedor del documento
+            document.getElementById('tituloDocumento').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     </script>
+
+    
 }

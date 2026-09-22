@@ -9,6 +9,7 @@ namespace MenuDeDocumentos.Utils
         /// 
         public static async Task ExecuteStoredProcedureAsync(
             string connectionString,
+            string nombreTabla,
             int codigo,
             Func<SqlDataReader, Task> processReader)
         {
@@ -19,12 +20,13 @@ namespace MenuDeDocumentos.Utils
                 throw new ArgumentNullException(nameof(processReader));
 
             await using var conn = new SqlConnection(connectionString);
-            await using var cmd = new SqlCommand("[dbo].[sp_PasanteObtenerDocumento]", conn)
+            await using var cmd = new SqlCommand("[dbo].[sp_PasanteObtenerDocumento3]", conn)
             {
                 CommandType = CommandType.StoredProcedure
             };
 
             cmd.Parameters.AddWithValue("@CodigoDocumento", codigo);
+            cmd.Parameters.AddWithValue("@tabla", nombreTabla);
 
             await conn.OpenAsync();
             await using var reader = await cmd.ExecuteReaderAsync();
