@@ -7,10 +7,8 @@
     string pdfInicial = ViewBag.PdfUrl as string ?? "";
     string tituloInicial = ViewBag.NombreDocumentoActual as string ?? "Seleccione un documento";
 
-    // Agrupación dinámica por Categoría
     var categorias = documentos.GroupBy(d => d.Categoria).ToList();
 
-    // Obtener los valores de la ruta actual
     int codigoPadreActual = ViewContext.RouteData.Values["codigo"] != null
         ? Convert.ToInt32(ViewContext.RouteData.Values["codigo"])
         : (int.TryParse(Context.Request.Query["codigo"], out int c) ? c : 0);
@@ -19,7 +17,6 @@
         ?? Context.Request.Query["nombreTabla"].ToString()
         ?? "";
 
-    // DICCIONARIO DE MAPEO PERSONALIZADO (Nombre en BD >> Nombre en Pantalla)
     var mapaCategorias = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
         { "Documento_actividad", "Documentos de Actividades" },
@@ -28,7 +25,6 @@
         { "Documentos_mia", "Documentos del MIA" }
     };
 
-    // FUNCIÓN DE FORMATO CON RESPALDO (FALLBACK)
     string ObtenerNombreCategoria(string? textoOriginal)
     {
         if (string.IsNullOrWhiteSpace(textoOriginal)) return "Sin Categoría";
@@ -127,7 +123,7 @@
             </div>
         </div>
 
-        <!-- PANEL DERECHO: Visor PDF con Pantalla de Carga -->
+        <!-- PANEL DERECHO: Visor PDF -->
         <div class="col-lg-9">
             <div class="card border-0 shadow-sm rounded-3 p-3 bg-white">
                 <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
@@ -135,22 +131,16 @@
                     <span class="badge" style="background-color: #0d5493;">Vista Previa</span>
                 </div>
 
-                <!-- Contenedor relativo para posicionar la pantalla de carga encima -->
                 <div class="cgr-pdf-container position-relative overflow-hidden rounded-3" style="height: 140vh; width: 100%;">
 
-                    <!-- PANATALLA / OVERLAY DE CARGA -->
+                    <!-- OVERLAY DE CARGA (Oculto por defecto mediante la clase d-none) -->
                     <div id="pdfLoadingOverlay"
-                         class="position-absolute top-0 start-0 w-100 h-100 bg-white d-flex flex-column align-items-center justify-content-center"
-                         style="z-index: 10; display: none;">
+                         class="position-absolute top-0 start-0 w-100 h-100 bg-white d-none flex-column align-items-center justify-content-center"
+                         style="z-index: 10;">
 
-                        <!-- Opción con Spinner de Bootstrap -->
                         <div class="spinner-border text-primary mb-3" style="width: 3.5rem; height: 3.5rem;" role="status">
                             <span class="visually-hidden">Cargando...</span>
                         </div>
-
-                        <!-- Si prefieres un LOGO o IMAGEN propia, puedes reemplazar el spinner superior por esto:
-                        <img src="~/images/logo.png" alt="Cargando..." class="mb-3 spinner-grow p-1" style="max-width: 100px;">
-                        -->
 
                         <h6 class="fw-bold text-dark mb-1">Cargando documento...</h6>
                         <p class="text-muted small mb-0">Por favor, espere un momento.</p>
@@ -161,8 +151,7 @@
                             src="@pdfInicial"
                             width="100%"
                             height="100%"
-                            style="border: none;"
-                            onload="ocultarLoader()">
+                            style="border: none;">
                         Su navegador no soporta la visualización de documentos PDF.
                     </iframe>
 
@@ -175,35 +164,53 @@
 
 @section Scripts {
     <script>
-        function cargarDocumento(url, titulo, elemento) {
+        let currentObjectUrl = null;
+
+        async function cargarDocumento(url, titulo, elemento) {
             const overlay = document.getElementById('pdfLoadingOverlay');
             const iframe = document.getElementById('pdfFrame');
 
-            // 1. Mostrar la pantalla de carga
-            overlay.style.display = 'flex';
+            // 1. Mostrar pantalla de carga (Remover d-none y agregar d-flex)
+            overlay.classList.remove('d-none');
+            overlay.classList.add('d-flex');
 
-            // 2. Asignar la nueva URL al iframe
-            iframe.src = url;
+            // 2. Actualizar interfaz activa y títulos
             document.getElementById('tituloDocumento').innerText = titulo;
-
-            // 3. Resaltar elemento activo en la lista
-            document.querySelectorAll('.doc-item').forEach(item => {
-                item.classList.remove('active');
-            });
+            document.querySelectorAll('.doc-item').forEach(item => item.classList.remove('active'));
             elemento.classList.add('active');
 
-            // 4. Hace scroll hasta el contenedor del documento
+            // 3. Scroll suave al inicio del visor
             document.getElementById('tituloDocumento').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
-        }
 
-        // Función invocada por el evento onload="" del iframe cuando termina de cargar
-        function ocultarLoader() {
-            const overlay = document.getElementById('pdfLoadingOverlay');
-            if (overlay) {
-                overlay.style.display = 'none';
+            try {
+                // Fetch explícito para monitorear la descarga del archivo
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Error al descargar el archivo.');
+
+                const blob = await response.blob();
+
+                // Liberar memoria del Blob anterior si existe
+                if (currentObjectUrl) {
+                    URL.revokeObjectURL(currentObjectUrl);
+                }
+
+                // Generar URL interna limpia tipo application/pdf
+                const pdfBlob = new Blob([blob], { type: 'application/pdf' });
+                currentObjectUrl = URL.createObjectURL(pdfBlob);
+
+                // Asignar la URL Blob al iframe
+                iframe.src = currentObjectUrl;
+
+            } catch (error) {
+                console.error("Error cargando el PDF:", error);
+                alert("Ocurrió un error al cargar el documento seleccionado.");
+            } finally {
+                // 4. Ocultar pantalla de carga
+                overlay.classList.remove('d-flex');
+                overlay.classList.add('d-none');
             }
         }
     </script>
