@@ -26,7 +26,6 @@
         { "Documento_base", "Documentación Base" },
         { "Documento_propuesta", "Documentos de Propuestas" },
         { "Documentos_mia", "Documentos del MIA" }
-        // Agrega aquí los nombres adicionales que quieras personalizar
     };
 
     // FUNCIÓN DE FORMATO CON RESPALDO (FALLBACK)
@@ -34,13 +33,11 @@
     {
         if (string.IsNullOrWhiteSpace(textoOriginal)) return "Sin Categoría";
 
-        // Si existe en el diccionario, retorna el texto amigable personalizado
         if (mapaCategorias.TryGetValue(textoOriginal, out string? nombrePersonalizado))
         {
             return nombrePersonalizado;
         }
 
-        // Si NO está en el diccionario, aplica la limpieza de guiones y Title Case
         string limpio = System.Text.RegularExpressions.Regex.Replace(textoOriginal, @"[^a-zA-Z0-9]", " ");
         limpio = System.Text.RegularExpressions.Regex.Replace(limpio, @"\s+", " ").Trim();
 
@@ -73,7 +70,6 @@
 
                                 <div class="accordion-item border rounded-3 mb-2 overflow-visible">
                                     <h2 class="accordion-header" id="@headingId">
-                                        <!-- Abierto por defecto sin clase 'collapsed' -->
                                         <button class="accordion-button fw-bold text-primary"
                                                 type="button"
                                                 data-bs-toggle="collapse"
@@ -84,7 +80,6 @@
                                         </button>
                                     </h2>
 
-                                    <!-- 'collapse show' para desplegar desde el renderizado inicial -->
                                     <div id="@categoryId"
                                          class="accordion-collapse collapse show"
                                          aria-labelledby="@headingId">
@@ -93,14 +88,14 @@
                                                 @foreach (var doc in grupo)
                                                 {
                                                     string downloadUrl = Url.Action(
-                                                        "DescargarDocumento",
-                                                        "Documento",
-                                                        new
-                                                        {
-                                                            nombreTabla = nombreTablaActual,
-                                                            codigoPadre = codigoPadreActual,
-                                                            indiceHijo = doc.Codigo
-                                                        }
+                                                    "DescargarDocumento",
+                                                    "Documento",
+                                                    new
+                                                    {
+                                                        nombreTabla = nombreTablaActual,
+                                                        codigoPadre = codigoPadreActual,
+                                                        indiceHijo = doc.Codigo
+                                                    }
                                                     )!;
 
                                                     <button type="button"
@@ -132,18 +127,45 @@
             </div>
         </div>
 
-        <!-- PANEL DERECHO: Visor PDF -->
-        <div class="col-lg-8">
+        <!-- PANEL DERECHO: Visor PDF con Pantalla de Carga -->
+        <div class="col-lg-9">
             <div class="card border-0 shadow-sm rounded-3 p-3 bg-white">
                 <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
                     <h5 id="tituloDocumento" class="fw-bold mb-0 text-dark">@tituloInicial</h5>
                     <span class="badge" style="background-color: #0d5493;">Vista Previa</span>
                 </div>
 
-                <div class="cgr-pdf-container overflow-hidden rounded-3" style="height: 140vh; width: 120vh;">
-                    <iframe id="pdfFrame" src="@pdfInicial" width="100%" height="100%" style="border: none;">
+                <!-- Contenedor relativo para posicionar la pantalla de carga encima -->
+                <div class="cgr-pdf-container position-relative overflow-hidden rounded-3" style="height: 140vh; width: 100%;">
+
+                    <!-- PANATALLA / OVERLAY DE CARGA -->
+                    <div id="pdfLoadingOverlay"
+                         class="position-absolute top-0 start-0 w-100 h-100 bg-white d-flex flex-column align-items-center justify-content-center"
+                         style="z-index: 10; display: none;">
+
+                        <!-- Opción con Spinner de Bootstrap -->
+                        <div class="spinner-border text-primary mb-3" style="width: 3.5rem; height: 3.5rem;" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+
+                        <!-- Si prefieres un LOGO o IMAGEN propia, puedes reemplazar el spinner superior por esto:
+                        <img src="~/images/logo.png" alt="Cargando..." class="mb-3 spinner-grow p-1" style="max-width: 100px;">
+                        -->
+
+                        <h6 class="fw-bold text-dark mb-1">Cargando documento...</h6>
+                        <p class="text-muted small mb-0">Por favor, espere un momento.</p>
+                    </div>
+
+                    <!-- IFRAME DEL VISOR PDF -->
+                    <iframe id="pdfFrame"
+                            src="@pdfInicial"
+                            width="100%"
+                            height="100%"
+                            style="border: none;"
+                            onload="ocultarLoader()">
                         Su navegador no soporta la visualización de documentos PDF.
                     </iframe>
+
                 </div>
             </div>
         </div>
@@ -154,21 +176,35 @@
 @section Scripts {
     <script>
         function cargarDocumento(url, titulo, elemento) {
-            document.getElementById('pdfFrame').src = url;
+            const overlay = document.getElementById('pdfLoadingOverlay');
+            const iframe = document.getElementById('pdfFrame');
+
+            // 1. Mostrar la pantalla de carga
+            overlay.style.display = 'flex';
+
+            // 2. Asignar la nueva URL al iframe
+            iframe.src = url;
             document.getElementById('tituloDocumento').innerText = titulo;
 
+            // 3. Resaltar elemento activo en la lista
             document.querySelectorAll('.doc-item').forEach(item => {
                 item.classList.remove('active');
             });
             elemento.classList.add('active');
 
-            // Hace scroll hasta el contenedor del documento
+            // 4. Hace scroll hasta el contenedor del documento
             document.getElementById('tituloDocumento').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
         }
-    </script>
 
-    
+        // Función invocada por el evento onload="" del iframe cuando termina de cargar
+        function ocultarLoader() {
+            const overlay = document.getElementById('pdfLoadingOverlay');
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    </script>
 }
