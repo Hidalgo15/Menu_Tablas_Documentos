@@ -227,4 +227,3 @@ C:\Users\pdesarrollo\Documents\Proyectos Pasante\Menu_Tablas_Documentos\MenuDeDo
 C:\Users\pdesarrollo\Documents\Proyectos Pasante\Menu_Tablas_Documentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.pdb
 C:\Users\pdesarrollo\Documents\Proyectos Pasante\Menu_Tablas_Documentos\MenuDeDocumentos\obj\Debug\net8.0\MenuDeDocumentos.genruntimeconfig.cache
 C:\Users\pdesarrollo\Documents\Proyectos Pasante\Menu_Tablas_Documentos\MenuDeDocumentos\obj\Debug\net8.0\ref\MenuDeDocumentos.dll
-C:\Users\pdesarrollo\Documents\Proyectos Pasante\Menu_Tablas_Documentos\MenuDeDocumentos\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
