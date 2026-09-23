@@ -7,6 +7,11 @@ namespace MenuDeDocumentos.Utils
     {
         /// Ejecuta el procedimiento almacenado de manera asíncrona.
         /// 
+
+        /// <param name="connectionString">La cadena de conexión a la base de datos.</param>
+        /// <param name="nombreTabla">El nombre de la tabla.</param>
+        /// <param name="codigo">El código del documento.</param>
+        /// <param name="processReader">La función para procesar el lector de datos.</param>
         public static async Task ExecuteStoredProcedureAsync(
             string connectionString,
             string nombreTabla,
