@@ -2,7 +2,7 @@
 @model Documento
 @{
     ViewData["Title"] = "Menú de Documentos";
-
+    // Obtener la lista de documentos y el PDF inicial desde ViewBag
     var documentos = ViewBag.Documentos as List<Documento> ?? new List<Documento>();
     string pdfInicial = ViewBag.PdfUrl as string ?? "";
     string tituloInicial = ViewBag.NombreDocumentoActual as string ?? "Seleccione un documento";
@@ -17,6 +17,12 @@
         ?? Context.Request.Query["nombreTabla"].ToString()
         ?? "";
 
+    /// <summary>
+    ///   Obtiene el nombre formateado de una categoría.
+    /// </summary>
+    /// <param name="textoOriginal">El texto original de la categoría.</param>
+    /// <returns>El nombre formateado de la categoría.</returns>
+    /// 
     var mapaCategorias = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
         { "Documento_actividad", "Documentos de Actividades" },
@@ -25,6 +31,12 @@
         { "Documentos_mia", "Documentos del MIA" }
     };
 
+    /// <summary>
+    ///   Obtiene el nombre formateado de una categoría.
+    /// </summary>
+    /// <param name="textoOriginal">El texto original de la categoría.</param>
+    /// <returns>El nombre formateado de la categoría.</returns>
+    /// 
     string ObtenerNombreCategoria(string? textoOriginal)
     {
         if (string.IsNullOrWhiteSpace(textoOriginal)) return "Sin Categoría";
