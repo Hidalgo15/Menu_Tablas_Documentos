@@ -17,12 +17,6 @@
         ?? Context.Request.Query["nombreTabla"].ToString()
         ?? "";
 
-    /// <summary>
-    ///   Obtiene el nombre formateado de una categoría.
-    /// </summary>
-    /// <param name="textoOriginal">El texto original de la categoría.</param>
-    /// <returns>El nombre formateado de la categoría.</returns>
-    /// 
     var mapaCategorias = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
         { "Documento_actividad", "Documentos de Actividades" },
@@ -31,12 +25,6 @@
         { "Documentos_mia", "Documentos del MIA" }
     };
 
-    /// <summary>
-    ///   Obtiene el nombre formateado de una categoría.
-    /// </summary>
-    /// <param name="textoOriginal">El texto original de la categoría.</param>
-    /// <returns>El nombre formateado de la categoría.</returns>
-    /// 
     string ObtenerNombreCategoria(string? textoOriginal)
     {
         if (string.IsNullOrWhiteSpace(textoOriginal)) return "Sin Categoría";
@@ -54,6 +42,30 @@
     }
 }
 
+<!-- PANTALLA COMPLETA DE BLOQUEO (CAPTCHA) -->
+<div id="captchaOverlay" class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex align-items-center justify-content-center" style="z-index: 9999; backdrop-filter: blur(5px); transition: opacity 0.5s ease;">
+    <div class="card border-0 shadow-lg p-4 rounded-4 text-center bg-white" style="max-width: 420px; width: 90%;">
+        <div class="mb-3">
+            <i class="bi bi-shield-lock-fill text-primary" style="font-size: 3rem;"></i>
+        </div>
+        <h4 class="fw-bold text-dark mb-2">Verificación de Seguridad</h4>
+        <p class="text-muted small mb-4">Por favor, completa la comprobación de seguridad para acceder al visor de documentos.</p>
+
+        <!-- Contenedor del Turnstile Widget con SiteKey inyectada desde ViewBag -->
+        <div class="d-flex justify-content-center mb-3">
+            <div class="cf-turnstile"
+                 data-sitekey="@ViewBag.TurnstileSiteKey"
+                 data-callback="onTurnstileSuccess"
+                 data-expired-callback="onTurnstileExpired"></div>
+        </div>
+
+        <div id="captchaMessage" class="small text-muted">
+            Esperando verificación...
+        </div>
+    </div>
+</div>
+
+<!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
 <div class="container-fluid py-2">
     <div class="row">
 
@@ -127,7 +139,7 @@
                                 <i class="bi bi-inbox" style="font-size: 2rem;"></i>
                             </p>
                             <p class="small">Ingresa una tabla y un código en la URL para cargar documentos</p>
-                            <p class="small"><code>https://sistema.url/Documento/NombreTabla/123</code></p>
+                            <p class="small"><code>https://sistema.url/NombreTabla/123</code></p>
                         </div>
                     }
 
@@ -145,7 +157,7 @@
 
                 <div class="cgr-pdf-container position-relative overflow-hidden rounded-3" style="height: 140vh; width: 100%;">
 
-                    <!-- OVERLAY DE CARGA (Oculto por defecto mediante la clase d-none) -->
+                    <!-- OVERLAY DE CARGA DE ARCHIVO -->
                     <div id="pdfLoadingOverlay"
                          class="position-absolute top-0 start-0 w-100 h-100 bg-white d-none flex-column align-items-center justify-content-center"
                          style="z-index: 10;">
@@ -175,52 +187,105 @@
 </div>
 
 @section Scripts {
+    <!-- API JS de Cloudflare -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
     <script>
         let currentObjectUrl = null;
+        let turnstileToken = null;
+
+        // Callback cuando Cloudflare aprueba al usuario
+        function onTurnstileSuccess(token) {
+            turnstileToken = token;
+
+            const msg = document.getElementById('captchaMessage');
+            msg.className = "small text-success fw-bold";
+            msg.innerText = "Verificación correcta. Accediendo...";
+
+            // Ocultar suavemente la pantalla de bloqueo
+            const overlay = document.getElementById('captchaOverlay');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.classList.remove('d-flex');
+                overlay.classList.add('d-none');
+
+                // AUTOSELECCIONAR Y CARGAR EL PRIMER DOCUMENTO AUTOMÁTICAMENTE
+                const primerDocumento = document.querySelector('.doc-item');
+                if (primerDocumento) {
+                    primerDocumento.click(); // Dispara el evento onclick que invoca cargarDocumento(...)
+                }
+            }, 500);
+        }
+
+        // Callback si el token caduca antes de usarlo
+        function onTurnstileExpired() {
+            turnstileToken = null;
+
+            const msg = document.getElementById('captchaMessage');
+            msg.className = "small text-danger";
+            msg.innerText = "La verificación ha caducado. Inténtalo de nuevo.";
+
+            // Volver a mostrar la pantalla de bloqueo si expiró
+            const overlay = document.getElementById('captchaOverlay');
+            overlay.classList.remove('d-none');
+            overlay.classList.add('d-flex');
+            overlay.style.opacity = '1';
+        }
 
         async function cargarDocumento(url, titulo, elemento) {
+            // Verificar si tenemos el token activo
+            if (!turnstileToken) {
+                alert("Debes realizar la verificación de seguridad para continuar.");
+                location.reload(); // Recarga si el token se perdió o caducó
+                return;
+            }
+
             const overlay = document.getElementById('pdfLoadingOverlay');
             const iframe = document.getElementById('pdfFrame');
 
-            // 1. Mostrar pantalla de carga (Remover d-none y agregar d-flex)
+            // Mostrar pantalla de descarga del documento
             overlay.classList.remove('d-none');
             overlay.classList.add('d-flex');
 
-            // 2. Actualizar interfaz activa y títulos
             document.getElementById('tituloDocumento').innerText = titulo;
             document.querySelectorAll('.doc-item').forEach(item => item.classList.remove('active'));
             elemento.classList.add('active');
 
-            // 3. Scroll suave al inicio del visor
             document.getElementById('tituloDocumento').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
 
             try {
-                // Fetch explícito para monitorear la descarga del archivo
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('Error al descargar el archivo.');
+                // Enviar la solicitud incluyendo el token en las cabeceras
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'X-Turnstile-Token': turnstileToken
+                    }
+                });
+
+                if (!response.ok) {
+                    if (response.status === 400 || response.status === 403) {
+                        throw new Error('Validación de seguridad expirada. Por favor recargue la página.');
+                    }
+                    throw new Error('Error al descargar el archivo.');
+                }
 
                 const blob = await response.blob();
 
-                // Liberar memoria del Blob anterior si existe
                 if (currentObjectUrl) {
                     URL.revokeObjectURL(currentObjectUrl);
                 }
 
-                // Generar URL interna limpia tipo application/pdf
                 const pdfBlob = new Blob([blob], { type: 'application/pdf' });
                 currentObjectUrl = URL.createObjectURL(pdfBlob);
-
-                // Asignar la URL Blob al iframe
                 iframe.src = currentObjectUrl;
 
             } catch (error) {
                 console.error("Error cargando el PDF:", error);
-                alert("Ocurrió un error al cargar el documento seleccionado.");
+                alert(error.message || "Ocurrió un error al cargar el documento.");
             } finally {
-                // 4. Ocultar pantalla de carga
                 overlay.classList.remove('d-flex');
                 overlay.classList.add('d-none');
             }
