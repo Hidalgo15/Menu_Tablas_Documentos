@@ -11,6 +11,8 @@ namespace MenuDeDocumentos
 
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddHttpClient();
+
             builder.Services.AddScoped<IDocumentoService, DocumentoService>();
 
             var app = builder.Build();
@@ -23,6 +25,7 @@ namespace MenuDeDocumentos
             }
 
             //app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
