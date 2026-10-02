@@ -16,6 +16,12 @@ namespace MenuDeDocumentos.Controllers.Documentos
             _documentoService = documentoService;
         }
 
+        /// <summary>
+        /// Recibe ambos parámetros de manera limpia y sin depender de sesiones
+        /// </summary>
+        /// <param name="nombreTabla"></param>
+        /// <param name="codigo"></param>
+        /// <returns></returns>
         [HttpGet("")]
         [HttpGet("Index")]
         [HttpGet("/{nombreTabla:regex(^[[a-zA-Z0-9_]]+$)}/{codigo:int}")]
@@ -48,14 +54,23 @@ namespace MenuDeDocumentos.Controllers.Documentos
             return View();
         }
 
-        // Recibe ambos parámetros de manera limpia y sin depender de sesiones
+        /// <summary>
+        /// Recibe varios parámetros de manera limpia y sin depender de sesiones
+        /// </summary>
+        /// <param name="nombreTabla"></param>
+        /// <param name="codigoPadre"></param>
+        /// <param name="indiceHijo"></param>
+        /// <returns></returns>
         [HttpGet("DescargarDocumento/{nombreTabla:regex(^[[a-zA-Z0-9_]]+$)}/{codigoPadre:int}/{indiceHijo:int}")]
         public async Task<IActionResult> DescargarDocumento(string? nombreTabla, int codigoPadre, int indiceHijo)
         {
+            /// Validación de parámetros
+            /// 
             if (codigoPadre <= 0 || indiceHijo < 0)
             {
                 return BadRequest("Parámetros de documento inválidos.");
             }
+            // Obtener el archivo comprimido desde la base de datos
 
             byte[]? archivoBytes = await _documentoService.ObtenerDocumentoDesdeBDAsync(codigoPadre, indiceHijo, nombreTabla ?? "");
 

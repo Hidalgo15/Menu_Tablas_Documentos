@@ -17,8 +17,15 @@ public class DocumentoService : IDocumentoService
             ?? throw new InvalidOperationException("La cadena de conexión 'ConexionSIGOB' no existe.");
     }
 
+    /// <summary>
+    /// Obtiene la lista de documentos desde la base de datos según el código padre y el nombre de la tabla.
+    /// </summary>
+    /// <param name="codigoPadre"></param>
+    /// <param name="nombreTabla"></param>
+    /// <returns></returns>
     public async Task<List<Documento>> ObtenerListaDocumentosAsync(int codigoPadre, string nombreTabla)
     {
+        
         var lista = new List<Documento>();
         int indice = 0;
 
@@ -42,6 +49,14 @@ public class DocumentoService : IDocumentoService
         return lista;
     }
 
+    /// <summary>
+    ///     Obtiene el documento desde la base de datos según el código padre, 
+    ///     el índice del hijo y el nombre de la tabla.
+    /// </summary>
+    /// <param name="codigoPadre"></param>
+    /// <param name="indiceHijo"></param>
+    /// <param name="nombreTabla"></param>
+    /// <returns></returns>
     public async Task<byte[]?> ObtenerDocumentoDesdeBDAsync(int codigoPadre, int indiceHijo, string nombreTabla)
     {
         byte[]? resultado = null;
@@ -68,6 +83,12 @@ public class DocumentoService : IDocumentoService
         return resultado;
     }
 
+    /// <summary>
+    ///   Verifica si el SqlDataReader contiene una columna específica.
+    /// </summary>
+    /// <param name="reader"></param>
+    /// <param name="columnName"></param>
+    /// <returns></returns>
     private static bool HasColumn(SqlDataReader reader, string columnName)
     {
         for (int i = 0; i < reader.FieldCount; i++)
@@ -80,6 +101,16 @@ public class DocumentoService : IDocumentoService
         return false;
     }
 
+    /// <summary>
+    ///   Descomprime un archivo comprimido en formato ZLIB 
+    ///   y devuelve el contenido descomprimido como un arreglo de bytes.
+    /// </summary>
+    /// <param name="archivoComprimido"></param>
+    /// <param name="codigoPadre"></param>
+    /// <param name="indiceHijo"></param>
+    /// <returns></returns>
+    /// <exception cref="FileNotFoundException"></exception>
+    /// 
     public async Task<byte[]> DescomprimirDocumentoAsync(byte[] archivoComprimido, int codigoPadre, int indiceHijo)
     {
         string tempDir = Path.Combine(Path.GetTempPath(), "VisorDocumentos", Guid.NewGuid().ToString());
